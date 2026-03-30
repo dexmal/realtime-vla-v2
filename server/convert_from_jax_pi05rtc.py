@@ -61,14 +61,10 @@ def build_empty_weights(prompt_len: int):
 
 def main():
     parser = argparse.ArgumentParser(description="Convert JAX Pi0.5 RTC weights to Triton Pi05RTC format.")
-    # parser.add_argument("--jax_path", type=str, required=True)
-    # parser.add_argument("--output", type=str, required=True)
-    # parser.add_argument("--prompt", type=str, required=True)
-    # parser.add_argument("--tokenizer_path", type=str, required=True)
-    parser.add_argument("--jax_path", type=str, default="/self_group/yc/ckpts/pi05_ft_dosw1_qpos_foldclothes_merging_stage1/quant_baseline/49999")
-    parser.add_argument("--output", type=str, default="/mlp_vepfs/share/myc/weight/openpi/pi05_ft_dosw1_qpos_foldclothes_merging_stage1_quant_baseline_49999_rtc2.pkl")
-    parser.add_argument("--prompt", type=str, default="fold the cloth")
-    parser.add_argument("--tokenizer_path", type=str, default="/mlp_vepfs/share/myc/weight/openpi/paligemma-3b-pt-224")
+    parser.add_argument("--jax_path", type=str, required=True)
+    parser.add_argument("--output", type=str, required=True)
+    parser.add_argument("--prompt", type=str, required=True)
+    parser.add_argument("--tokenizer_path", type=str, required=True)
     args = parser.parse_args()
 
     dump_weights = load_jax_weights(args.jax_path)
