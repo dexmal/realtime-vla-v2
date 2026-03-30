@@ -1,0 +1,16 @@
+numpy
+pyyaml
+requests
+opencv-python
+pillow
+fastapi
+uvicorn
+scipy
+osqp
+transformers
+torch
+triton
+casadi
+acados_template
+rerun-sdk
+pyrealsense2

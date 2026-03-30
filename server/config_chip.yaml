@@ -1,0 +1,38 @@
+server:
+  host: "0.0.0.0"
+  port: 8002
+  endpoint: "/infer"
+
+model:
+  adapter: "openpi_rtc_triton"
+  config_name: "chip_dosw1_rtc"
+  checkpoint: "/mlp_vepfs/share/tj/datas/openpi/openpi_ft/checkpoints/chip_dosw1_rtc/chip_dosw1_rtc_0318/79999_rtc.pkl"
+  prompt: "stack all bowls in order"
+  adarms_knob: 0
+  valid_action_num: 50
+  action_horizon: 50
+  action_type: "joint"
+  image_size: [640, 480]
+  tokenizer_path: "/mlp_vepfs/share/myc/weight/openpi/paligemma-3b-pt-224"
+  norm_stats_dir: "/mlp_vepfs/share/tj/datas/openpi/openpi_ft/checkpoints/chip_dosw1_rtc/chip_dosw1_rtc_0318/25000/assets/chip_demo_0317_0318"
+  discrete_state_input: true
+  state_dim: 14
+  action_dim: 14
+  noise_seed: null
+
+inference:
+  optimizer: "timeaxis_smooth"
+  min_action_interval_ms: 20.0
+  max_joint_speed_per_s: 2.0
+  max_joint_acc_per_s2: 10.0
+  timeaxis_dt_ref_s: 0.018
+  timeaxis_dt_min_s: 0.01
+  timeaxis_dt_max_s: 0.020
+  timeaxis_lambda_acc: 10.0
+  timeaxis_lambda_time: 1.0
+  timeaxis_stride: 50
+  timeaxis_optdims: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  timeaxis_v_max: null
+  timeaxis_lambda_v: 10.0
+  timeaxis_horizon: 50
+  timeaxis_logging: false

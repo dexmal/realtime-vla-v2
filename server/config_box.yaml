@@ -1,0 +1,35 @@
+server:
+  host: "0.0.0.0"
+  port: 8002
+  endpoint: "/infer"
+
+model:
+  adapter: "openpi_rtc_triton"
+  config_name: "insert_chip_close_allin1_rtc_0316"
+  checkpoint: "/mlp_vepfs/share/myc/weight/openpi/cotrain_model.pkl"
+  prompt: "Place the five small white boxes into the five container slots inside the large black box."
+  adarms_knob: 0
+  valid_action_num: 50
+  action_horizon: 50
+  action_type: "joint"
+  image_size: [640, 480]
+  tokenizer_path: "/mlp_vepfs/share/myc/weight/openpi/paligemma-3b-pt-224"
+  norm_stats_dir: "/mlp_vepfs/share/hyc/data/checkpoints/insert_chip_close_allin1_rtc_0316/insert_chip_close_allin1_rtc_0316/50000/assets/insert_close_allin1"
+  discrete_state_input: true
+  state_dim: 14
+  action_dim: 14
+  noise_seed: null
+
+inference:
+  optimizer: "timeaxis_smooth"
+  timeaxis_dt_ref_s: 0.01
+  timeaxis_dt_min_s: 0.008
+  timeaxis_dt_max_s: 0.016
+  timeaxis_lambda_acc: 10.0
+  timeaxis_lambda_time: 1.0
+  timeaxis_stride: 50
+  timeaxis_optdims: [0, 1, 2, 3, 4, 5, 6]
+  timeaxis_v_max: null
+  timeaxis_lambda_v: 10.0
+  timeaxis_horizon: 50
+  timeaxis_logging: false

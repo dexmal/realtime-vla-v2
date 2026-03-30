@@ -1,0 +1,61 @@
+client:
+  infer_url: "http://10.174.138.105:8002"
+  endpoint: "/infer"
+  timeout_s: 0.2
+  run_duration_s: 72000
+
+observer:
+  name: "airbot_real"
+  image_size: [640, 480]
+  fps: 30
+  state_dim: 14
+  airbot_host: "localhost"
+  airbot_left_port: 50051
+  airbot_right_port: 50053
+  top_camera_id: "243122070752"
+  left_camera_id: "207522074142"
+  right_camera_id: "947122070266"
+  enable_cameras: true
+
+executor:
+  name: "ondevice_mpc"
+  enable_init_action: true
+  init_action: [0.0, 0.0, 0.0, 1.57, 0.0, -1.57, 0.0, 0.0, 0.0, 0.0, -1.57, -0.0, 1.57, 0.0]
+  init_steps: 100
+  init_sleep_s: 0.01
+  control_dt_s: 0.016
+  obs_image_delay_ms: 55.0
+  state_delay_s: 0.05
+  max_prefill_states: 15
+  heartbeat_history_len: 200
+  planner_dims: [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12]
+  airbot_host: "localhost"
+  airbot_left_port: 50051
+  airbot_right_port: 50053
+  left_gripper_bias: -0.002
+  right_gripper_bias: -0.002
+  mpc_contact_threshold: 0.15
+  mpc_contact_hold_min: 8
+  mpc_tau: 0.15
+  mpc_horizon_n: 15
+  mpc_w_track0: 10.0
+  mpc_track_decay: 1.0
+  mpc_w_cmd: 0.0
+  mpc_w_yx: 0.0
+  mpc_w_dy: 0.0
+  mpc_w_ddy: 20.0
+  mpc_contact_v_scale: 0.4
+  mpc_q_min: []
+  mpc_q_max: []
+  mpc_v_max: []
+  mpc_dy_max: []
+  mpc_ddy_max: []
+  gripper_heartbeat_lookahead_ms: 90.0
+  gripper_lookahead_dims: [6, 13]
+
+visualization:
+  output_dir: "./output"
+  enable_recording: True
+  record_videos: True
+  record_rerun: True
+  max_pending_video_frames: 32

@@ -1,0 +1,56 @@
+client:
+  infer_url: "http://10.174.138.105:8002"
+  endpoint: "/infer"
+  timeout_s: 0.2
+  run_duration_s: 72000
+
+observer:
+  name: "airbot_real"
+  image_size: [640, 480]
+  fps: 30
+  state_dim: 14
+  airbot_host: "localhost"
+  airbot_left_port: 50051
+  airbot_right_port: 50053
+  top_camera_id: "040322071052"
+  left_camera_id: "040322070907"
+  right_camera_id: "944622073247"
+  enable_cameras: true
+
+executor:
+  name: "raw_action"
+  enable_init_action: true
+  init_action: [0.0, 0.0, 0.0, 1.57, 0.0, -1.57, 0.0, 0.0, 0.0, 0.0, -1.57, -0.0, 1.57, 0.0]
+  init_steps: 100
+  init_sleep_s: 0.01
+  control_dt_s: 0.01
+  obs_image_delay_ms: 55.0
+  state_delay_s: 0.05
+  max_prefill_states: 15
+  heartbeat_history_len: 200
+  airbot_host: "localhost"
+  airbot_left_port: 50051
+  airbot_right_port: 50053
+  left_gripper_bias: -0.002
+  right_gripper_bias: 0.0
+  infer_fixed_dims: [7, 8, 9, 10, 11, 12]
+  infer_fixed_values: [0.0, 0.0, 0.0, -1.57, 0.0, 1.57]
+  command_fixed_dims: [7, 8, 9, 10, 11, 12, 13]
+  command_fixed_values: [0.0, 0.0, 0.0, -1.57, 0.0, 1.57, 0.0]
+  action_interval_ms: 10.0
+  action_speed_limit_per_s: 10.0
+  action_speed_limit_dims: [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12]
+  enable_servo_interpolation: true
+  servo_interval_ms: 10.0
+  savgol_window_length: 1
+  savgol_polyorder: 3
+  forward_track_alpha: 1.0
+  forward_track_delay_cnt: 5
+  forward_track_lead_s: 0.15
+
+visualization:
+  output_dir: "./output"
+  enable_recording: True
+  record_videos: True
+  record_rerun: True
+  max_pending_video_frames: 32

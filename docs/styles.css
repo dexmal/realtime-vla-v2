@@ -1,0 +1,279 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --line: #e5e5e5;
+  --pill-bg: #111111;
+  --pill-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  width: min(1080px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 36px 0 72px;
+}
+
+.hero {
+  text-align: center;
+  padding: 8px 0 18px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin: 0 auto;
+  max-width: 980px;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.authors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 22px;
+  max-width: 920px;
+  margin: 26px auto 0;
+}
+
+.author-card {
+  min-width: 0;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.author-email {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  word-break: break-word;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.paper-section {
+  padding: 34px 0 0;
+  border-top: 1px solid var(--line);
+  margin-top: 34px;
+}
+
+.paper-section h2 {
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 2.35rem);
+}
+
+.copy-block {
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+
+.copy-block p,
+.citation-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.copy-block p + p {
+  margin-top: 14px;
+}
+
+.figure-block {
+  width: min(760px, 100%);
+  margin: 24px auto 0;
+}
+
+.figure-block img,
+.figure-block svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure-block figcaption {
+  margin-top: 12px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.svg-label {
+  font-family: "Libre Baskerville", serif;
+  font-size: 28px;
+  fill: #111111;
+}
+
+.svg-label.large {
+  font-size: 34px;
+}
+
+.svg-box-text {
+  font-family: "Inter", sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  fill: #ffffff;
+}
+
+.svg-robot-text {
+  font-family: "Inter", sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  fill: #ffffff;
+}
+
+.demo-intro {
+  margin-bottom: 26px;
+}
+
+.demo-item + .demo-item {
+  margin-top: 34px;
+}
+
+.demo-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.demo-item h3 {
+  margin: 0;
+  font-size: 1.38rem;
+  text-align: center;
+}
+
+.rrd-link {
+  color: var(--muted);
+  font-size: 0.96rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.demo-video {
+  width: min(820px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.demo-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #d9d9d9;
+}
+
+.citation-section {
+  padding-bottom: 8px;
+}
+
+.citation-note {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+pre {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 22px;
+  overflow-x: auto;
+  background: #f7f7f7;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@media (max-width: 768px) {
+  .page {
+    width: min(100vw - 24px, 1080px);
+    padding-top: 24px;
+  }
+
+  .authors-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hero-links a {
+    min-width: 96px;
+    padding: 11px 18px;
+  }
+
+  .paper-section {
+    padding-top: 26px;
+    margin-top: 26px;
+  }
+
+  .svg-label {
+    font-size: 18px;
+  }
+
+  .svg-label.large {
+    font-size: 20px;
+  }
+
+  .svg-box-text,
+  .svg-robot-text {
+    font-size: 22px;
+  }
+
+  .demo-caption {
+    gap: 10px;
+  }
+
+  .demo-item h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Realtime-VLA V2</title>
+    <meta
+      name="description"
+      content="Realtime-VLA V2: Learning to Run VLAs Fast, Smooth, and Accurate."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <h1>Realtime-VLA V2: Learning to Run VLAs Fast, Smooth, and Accurate</h1>
+        <div class="authors-grid">
+          <div class="author-card">
+            <div class="author-name">Chen Yang</div>
+            <div class="author-email">yangchen@dexmal.com</div>
+          </div>
+          <div class="author-card">
+            <div class="author-name">Yucheng Hu</div>
+            <div class="author-email">hyc@dexmal.com</div>
+          </div>
+          <div class="author-card">
+            <div class="author-name">Yunchao Ma</div>
+            <div class="author-email">myc@dexmal.com</div>
+          </div>
+          <div class="author-card">
+            <div class="author-name">Yunhuan Yang</div>
+            <div class="author-email">yyh@dexmal.com</div>
+          </div>
+          <div class="author-card">
+            <div class="author-name">Jing Tan</div>
+            <div class="author-email">tanjing@dexmal.com</div>
+          </div>
+          <div class="author-card">
+            <div class="author-name">Haoqiang Fan</div>
+            <div class="author-email">fhq@dexmal.com</div>
+          </div>
+        </div>
+        <div class="hero-links">
+          <a href="https://arxiv.org/abs/2603.26360" target="_blank" rel="noreferrer">arXiv</a>
+          <a href="https://github.com/dexmal/realtime-vla-v2" target="_blank" rel="noreferrer">Code</a>
+        </div>
+      </section>
+
+      <section class="paper-section">
+        <h2>Abstract</h2>
+        <div class="copy-block">
+          <p>
+            In deployment of the VLA models to real-world robotic tasks, execution speed matters.
+            In previous work we analyze how to make inference time of VLAs on GPU fast, and in this
+            report we attack the remaining issues. We show a set of techniques that are important to
+            let a light-weight robotic reach human speed with VLA generated trajectory.
+          </p>
+          <p>
+            The stack of technology ranges from calibration, planning and control, and learning based
+            method to identify optimal execution speed. The end-to-end result of our methods is that on
+            a set of real-world tasks that require both dexterity and accuracy, we let the robot execute
+            about 3x faster than a standard execution baseline, on par with casual human operation, and
+            close to the robot’s hardware limit.
+          </p>
+        </div>
+        <figure class="figure-block">
+          <img
+            src="assets/figures/model.png"
+            alt="Post-processing framework of VLA's trajectory"
+          />
+          <figcaption>Post-processing framework of VLA&rsquo;s trajectory.</figcaption>
+        </figure>
+      </section>
+
+      <section class="paper-section">
+        <h2>Demo Videos</h2>
+        <div class="copy-block demo-intro">
+          <p>
+            Below are three videos of the robot performing complex tasks in real environments. Each
+            task is also accompanied by a corresponding RRD record, where one can inspect synchronized
+            videos from three camera views together with the visualization of different trajectory
+            curves. Across all three tasks, Realtime-VLA V2 reaches execution that is on par with
+            casual human operation.
+          </p>
+        </div>
+
+        <article class="demo-item">
+          <div class="demo-caption">
+            <h3>Fold Shirt</h3>
+            <a
+              class="rrd-link"
+              href="https://dexbotic.com/release_video_data/fold_shirt.rrd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              rrd
+            </a>
+            <a
+              class="rrd-link"
+              href="https://dexbotic.com/release_video_data/fold_shirt_vla.mp4"
+              download
+            >
+              video
+            </a>
+          </div>
+          <div class="demo-video">
+            <video controls controlsList="nodownload" muted loop playsinline preload="metadata">
+              <source src="https://dexbotic.com/release_video_data/shirt_fold_vla_2.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <article class="demo-item">
+          <div class="demo-caption">
+            <h3>Pick Latch</h3>
+            <a
+              class="rrd-link"
+              href="https://dexbotic.com/release_video_data/pick_latch.rrd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              rrd
+            </a>
+            <a
+              class="rrd-link"
+              href="https://dexbotic.com/release_video_data/pick_latch_vla.mp4"
+              download
+            >
+              video
+            </a>
+          </div>
+          <div class="demo-video">
+            <video controls controlsList="nodownload" muted loop playsinline preload="metadata">
+              <source src="https://dexbotic.com/release_video_data/pick_latch_vla.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+
+        <article class="demo-item">
+          <div class="demo-caption">
+            <h3>Place Into Fixture</h3>
+            <a
+              class="rrd-link"
+              href="https://dexbotic.com/release_video_data/place_into_fixture.rrd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              rrd
+            </a>
+            <a
+              class="rrd-link"
+              href="https://dexbotic.com/release_video_data/place_into_fixture.mp4"
+              download
+            >
+              video
+            </a>
+          </div>
+          <div class="demo-video">
+            <video controls controlsList="nodownload" muted loop playsinline preload="metadata">
+              <source src="https://dexbotic.com/release_video_data/place_into_fixture.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </article>
+      </section>
+
+      <section class="paper-section citation-section">
+        <h2>Citation</h2>
+        <p class="citation-note">
+          If you find this project useful in your research, please cite:
+        </p>
+        <pre><code>@article{yang2026realtimevlav2,
+  title={Realtime-VLA V2: Learning to Run VLAs Fast, Smooth, and Accurate},
+  author={Chen Yang and Yucheng Hu and Yunchao Ma and Yunhuan Yang and Jing Tan and Haoqiang Fan},
+  journal={arXiv preprint arXiv:2603.26360},
+  year={2026}
+}</code></pre>
+      </section>
+    </main>
+  </body>
+</html>
