@@ -1,5 +1,5 @@
 client:
-  infer_url: "http://10.174.138.105:8002"
+  infer_url: "http://YOUR_SERVER_HOST:8000"
   endpoint: "/infer"
   timeout_s: 0.2
   run_duration_s: 72000
@@ -10,11 +10,11 @@ observer:
   fps: 30
   state_dim: 14
   airbot_host: "localhost"
-  airbot_left_port: 50051
-  airbot_right_port: 50053
-  top_camera_id: "040322071052"
-  left_camera_id: "040322070907"
-  right_camera_id: "944622073247"
+  airbot_left_port: 0
+  airbot_right_port: 0
+  top_camera_id: "YOUR_TOP_CAMERA_ID"
+  left_camera_id: "YOUR_LEFT_CAMERA_ID"
+  right_camera_id: "YOUR_RIGHT_CAMERA_ID"
   enable_cameras: true
 
 executor:
@@ -29,8 +29,8 @@ executor:
   max_prefill_states: 15
   heartbeat_history_len: 200
   airbot_host: "localhost"
-  airbot_left_port: 50051
-  airbot_right_port: 50053
+  airbot_left_port: 0
+  airbot_right_port: 0
   left_gripper_bias: -0.002
   right_gripper_bias: 0.0
   infer_fixed_dims: [7, 8, 9, 10, 11, 12]

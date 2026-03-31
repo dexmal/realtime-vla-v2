@@ -1,20 +1,20 @@
 server:
   host: "0.0.0.0"
-  port: 8002
+  port: 8000
   endpoint: "/infer"
 
 model:
   adapter: "openpi_rtc_triton"
-  config_name: "insert_chip_close_allin1_rtc_0316"
-  checkpoint: "/mlp_vepfs/share/myc/weight/openpi/cotrain_model.pkl"
+  config_name: "box_task_config"
+  checkpoint: "/path/to/checkpoints/box_task_model.pkl"
   prompt: "Place the five small white boxes into the five container slots inside the large black box."
   adarms_knob: 0
   valid_action_num: 50
   action_horizon: 50
   action_type: "joint"
   image_size: [640, 480]
-  tokenizer_path: "/mlp_vepfs/share/myc/weight/openpi/paligemma-3b-pt-224"
-  norm_stats_dir: "/mlp_vepfs/share/hyc/data/checkpoints/insert_chip_close_allin1_rtc_0316/insert_chip_close_allin1_rtc_0316/50000/assets/insert_close_allin1"
+  tokenizer_path: "/path/to/tokenizers/paligemma-3b-pt-224"
+  norm_stats_dir: "/path/to/norm_stats/box_task"
   discrete_state_input: true
   state_dim: 14
   action_dim: 14

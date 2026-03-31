@@ -1,20 +1,20 @@
 server:
   host: "0.0.0.0"
-  port: 8002
+  port: 8000
   endpoint: "/infer"
 
 model:
   adapter: "openpi_rtc_triton"
-  config_name: "chip_dosw1_rtc"
-  checkpoint: "/mlp_vepfs/share/tj/datas/openpi/openpi_ft/checkpoints/chip_dosw1_rtc/chip_dosw1_rtc_0318/79999_rtc.pkl"
+  config_name: "chip_task_config"
+  checkpoint: "/path/to/checkpoints/chip_task_model.pkl"
   prompt: "stack all bowls in order"
   adarms_knob: 0
   valid_action_num: 50
   action_horizon: 50
   action_type: "joint"
   image_size: [640, 480]
-  tokenizer_path: "/mlp_vepfs/share/myc/weight/openpi/paligemma-3b-pt-224"
-  norm_stats_dir: "/mlp_vepfs/share/tj/datas/openpi/openpi_ft/checkpoints/chip_dosw1_rtc/chip_dosw1_rtc_0318/25000/assets/chip_demo_0317_0318"
+  tokenizer_path: "/path/to/tokenizers/paligemma-3b-pt-224"
+  norm_stats_dir: "/path/to/norm_stats/chip_task"
   discrete_state_input: true
   state_dim: 14
   action_dim: 14

@@ -1,20 +1,20 @@
 server:
   host: "0.0.0.0"
-  port: 8002
+  port: 8000
   endpoint: "/infer"
 
 model:
   adapter: "openpi_rtc_triton"
-  config_name: "pi05_ft_dosw1_qpos_foldclothes_merging_stage1"
-  checkpoint: "/mlp_vepfs/share/myc/weight/openpi/pi05_ft_dosw1_qpos_foldclothes_merging_stage1_quant_baseline_49999_rtc2.pkl"
+  config_name: "cloth_task_config"
+  checkpoint: "/path/to/checkpoints/cloth_task_model.pkl"
   prompt: "fold the cloth"
   adarms_knob: 0
   valid_action_num: 50
   action_horizon: 50
   action_type: "joint"
   image_size: [640, 480]
-  tokenizer_path: "/mlp_vepfs/share/myc/weight/openpi/paligemma-3b-pt-224"
-  norm_stats_dir: "/self_group/yc/ckpts/pi05_ft_dosw1_qpos_foldclothes_merging_stage1/quant_baseline/49999/assets/fold_cloth_sft_advantage"
+  tokenizer_path: "/path/to/tokenizers/paligemma-3b-pt-224"
+  norm_stats_dir: "/path/to/norm_stats/cloth_task"
   discrete_state_input: true
   state_dim: 14
   action_dim: 14
